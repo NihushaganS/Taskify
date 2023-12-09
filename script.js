@@ -12,7 +12,7 @@ const saveChanges = () => {
 
   const newCard = `
   <div id=${taskData.id} class="col-md-6 col-lg-4 my-4">
-  <div class="card">
+  <div class="card mb-2" style="height: 10rem; width: 21rem;">
     <div class="card-header gap-2 d-flex justify-content-end">
       <button class="btn btn-outline-info" name=${taskData.id} onclick="editCard.apply(this, arguments)" >
         <i class="fal fa-pencil" name=${taskData.id}></i>
