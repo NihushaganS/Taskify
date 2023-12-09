@@ -1,4 +1,4 @@
-const taskContainer = document.querySelector(".task_container");
+const taskContainer = document.querySelector(".task__container");
 console.log(taskContainer);
 
 const saveChanges = () => {
@@ -39,5 +39,5 @@ const saveChanges = () => {
   </div>
   </div>`;
 
-  taskContainer.insertAdjacentHTML("beforeend");
+  taskContainer.insertAdjacentHTML("beforeend", newCard);
 };
