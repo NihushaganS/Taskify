@@ -4,9 +4,13 @@ const globalStore = [];
 const loadInitialCardData = () => {
   const getCardData = localStorage.getItem("taskify");
 
-  const taskData = JSON.parse(getCardData);
+  const {cards} = JSON.parse(getCardData);
 
-  cards
+  cards.map((cardObject) => {
+    taskContainer.insertAdjacentHTML("beforeend", newCard);
+    globalStore.push(cardObject);
+  }
+  )
 };
 
 const saveChanges = () => {
