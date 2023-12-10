@@ -1,5 +1,7 @@
 const taskContainer = document.querySelector(".task__container");
-console.log(taskContainer);
+const globalStore = [];
+
+
 
 const saveChanges = () => {
   const taskData = {
@@ -40,4 +42,8 @@ const saveChanges = () => {
   </div>`;
 
   taskContainer.insertAdjacentHTML("beforeend", newCard);
+
+  globalStore.push(taskData);
+  localStorage.setItem("taskify",globalStore);
+
 };
