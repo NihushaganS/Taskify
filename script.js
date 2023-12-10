@@ -1,7 +1,13 @@
 const taskContainer = document.querySelector(".task__container");
 const globalStore = [];
 
+const loadInitialCardData = () => {
+  const getCardData = localStorage.getItem("taskify");
 
+  const taskData = JSON.parse(getCardData);
+
+  cards
+};
 
 const saveChanges = () => {
   const taskData = {
@@ -14,7 +20,7 @@ const saveChanges = () => {
 
   const newCard = `
   <div id=${taskData.id} class="col-md-6 col-lg-4 my-4">
-  <div class="card mb-2" style="height: 10rem; width: 21rem;">
+  <div class="card mb-2" style="height: 8rem; width: 17rem;">
     <div class="card-header gap-2 d-flex justify-content-end">
       <button class="btn btn-outline-info" name=${taskData.id} onclick="editCard.apply(this, arguments)" >
         <i class="fal fa-pencil" name=${taskData.id}></i>
@@ -44,6 +50,7 @@ const saveChanges = () => {
   taskContainer.insertAdjacentHTML("beforeend", newCard);
 
   globalStore.push(taskData);
-  localStorage.setItem("taskify",globalStore);
+  localStorage.setItem("taskify",JSON.stringify({cards:globalStore}));
+
 
 };
