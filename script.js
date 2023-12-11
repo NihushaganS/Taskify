@@ -56,5 +56,8 @@ const saveChanges = () => {
   globalStore.push(taskData);
   localStorage.setItem("taskify",JSON.stringify({cards:globalStore}));
 
-
+  tasktitle.setAttribute("contenteditable", "false");
+  tasktype.setAttribute("contenteditable", "false");
+  taskdescription.setAttribute("contenteditable", "false");
+  submitButton.innerHTML = "Open Task";
 };
